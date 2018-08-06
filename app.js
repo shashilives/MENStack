@@ -9,7 +9,6 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  console.log("Inside GET Request");
   res.send("<h1>Hi There</h1>");
 });
 
