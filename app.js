@@ -2,6 +2,18 @@ const express = require("express");
 
 const app = express();
 const exphbs = require("express-handlebars");
+const mongoose = require("mongoose");
+
+//connect to mongodb
+let uri = "mongodb://localhost/vidjot-dev";
+
+mongoose.connect(uri)
+  .then(() => {
+    console.log("Connected to MongoDB...");
+  })
+  .catch(err =>
+    console.log(err)
+  );
 
 //Handlebar template engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
